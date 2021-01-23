@@ -48,6 +48,11 @@ def exit_window():
     else:
         pass
 
+def Admin_page():
+    root.destroy()
+    import Adimaccess
+
+
 
 heading = Label(root, text='LOGIN PAGE ',font='times 30 bold underline',fg='black',bg='#D9D5D9')
 heading.place(x=150,y=20)
@@ -70,6 +75,9 @@ login_button.place(x=200,y=220)
 
 exit_button = Button(root,text="Exit",bg="Magenta",command=exit_window)
 exit_button.place(x=300,y=220)
+
+admin_button = Button(root,text="ADMIN",bg="Magenta",command=Admin_page)
+admin_button.place(x=400,y=220)
 
 
 root.mainloop()

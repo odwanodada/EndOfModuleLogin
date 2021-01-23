@@ -45,6 +45,7 @@ def exit_window():
     message_box = messagebox.askquestion('Exit UserApplication', 'Are you sure you want to exit the application')
     if message_box == 'yes':
         root.destroy()
+        import lcfLoginMysql
     else:
         pass
 

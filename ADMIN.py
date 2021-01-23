@@ -73,6 +73,7 @@ def exit_window():
     message_box = messagebox.askquestion('Exit ADMIN', 'Are you sure you want to exit the application')
     if message_box == 'yes':
         od.destroy()
+        import Adimaccess
     else:
         pass
 
