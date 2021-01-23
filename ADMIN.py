@@ -56,12 +56,9 @@ def update():
     sql = "Update Users SET Username=%s,Description =%s,Cell_no=%s where id =%s;"
 
 
-    mycursor.execute(sql, (id,name,type,cell,))
+    mycursor.execute(sql, [(name),(type),(cell),(id)])
 
     mydb.commit()
-
-
-
 
 
 def get_all():
