@@ -3,7 +3,7 @@ from tkinter import messagebox
 import mysql.connector
 
 root = Tk ()
-root.title("LOGIN PAGE")
+root.title("ADMIN PAGE")
 root.geometry("500x500")
 
 
@@ -14,7 +14,7 @@ mycursor = mydb.cursor()
 def Login():
     user_verify = Username.get()
     pass_verify = Password.get()
-    sql = "select * from Login where Full_Name = %s and Password = %s"
+    sql = "select * from AdminSign where Full_Name = %s and Password = %s"
 
     mycursor.execute(sql,[(user_verify), (pass_verify)])
     results = mycursor.fetchall()
@@ -31,7 +31,7 @@ def logged():
     Username.delete(0, END)
     Password.delete(0, END)
     root.destroy()
-    import User
+    import ADMIN
 
 
 
@@ -49,7 +49,7 @@ def exit_window():
         pass
 
 
-heading = Label(root, text='LOGIN PAGE ',font='times 30 bold underline',fg='black',bg='#D9D5D9')
+heading = Label(root, text='ADMIN PAGE ',font='times 30 bold underline',fg='black',bg='#D9D5D9')
 heading.place(x=150,y=20)
 
 
