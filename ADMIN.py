@@ -54,11 +54,14 @@ def update():
     cell = Cell_no.get()
 
     sql = "Update Users SET Username=%s,Description =%s,Cell_no=%s where id =%s;"
-    val = (id, name, type, cell)
 
-    mycursor.execute(sql, val)
+
+    mycursor.execute(sql, (id,name,type,cell,))
 
     mydb.commit()
+
+
+
 
 
 def get_all():
@@ -83,7 +86,7 @@ def clear_all():
 
 
 
-diplay_names = Listbox(od, bg="pink", fg="black", width=60, selectbackground="orange", selectforeground="black")
+diplay_names = Listbox(od, bg="pink", fg="black", width=60, selectbackground="white", selectforeground="black")
 diplay_names.pack(pady=20)
 
 id_lbl = Label(od,text="Enter I.D")

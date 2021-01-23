@@ -32,7 +32,9 @@ def logged():
     messagebox.showinfo("Login Page","You have successfully logged")
     Username.delete(0, END)
     Password.delete(0, END)
+    root.destroy()
     import User
+
 
 
 def failed():
