@@ -57,6 +57,12 @@ def update():
 
 
     mycursor.execute(sql, [(name),(type),(cell),(id)])
+    messagebox.showinfo("ADMIN", "Succesfully Updated")
+    Username.delete(0, END)
+    ID_no.delete(0, END)
+    Description.delete(0, END)
+    Cell_no.delete(0, END)
+    diplay_names.delete(0, END)
 
     mydb.commit()
 

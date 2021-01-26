@@ -20,7 +20,6 @@ def reg_function():
     sql = "insert into Users(id, Username, Description, Cell_no) values(%s, %s, %s, %s)"
     val = (id, name, type, cell)
 
-
     mycursor.execute(sql, val)
 
     mydb.commit()
