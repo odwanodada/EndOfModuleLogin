@@ -37,34 +37,35 @@ def insert():
 
 #DELETE Function
 def delete():
-    num = int(ID_no.get())
-    sql_Delete_query = "DELETE FROM Users WHERE id=%s"
-
-    mycursor.execute(sql_Delete_query, [num])
-
-    messagebox.showinfo("ADMIN"," delete succesfully")
-    ID_no.delete(0, END)
-
-    mydb.commit()
+    try:
+        num = int(ID_no.get())
+        sql_Delete_query = "DELETE FROM Users WHERE id=%s"
+        mycursor.execute(sql_Delete_query, [num])
+        messagebox.showinfo("ADMIN"," delete succesfully")
+        ID_no.delete(0, END)
+        mydb.commit()
+    except ValueError:
+        messagebox.showinfo("ADMIN", "Please enter ID to delete")
 
 def update():
-    id = ID_no.get()
-    name = Username.get()
-    type = Description.get()
-    cell = Cell_no.get()
 
-    sql = "Update Users SET Username=%s,Description =%s,Cell_no=%s where id =%s;"
+        id = ID_no.get()
+        name = Username.get()
+        type = Description.get()
+        cell = Cell_no.get()
+        sql = "Update Users SET Username=%s,Description =%s,Cell_no=%s where id =%s;"
+
+        mycursor.execute(sql, [(name),(type),(cell),(id)])
+        messagebox.showinfo("ADMIN", "Succesfully Updated")
+        Username.delete(0, END)
+        ID_no.delete(0, END)
+        Description.delete(0, END)
+        Cell_no.delete(0, END)
+        diplay_names.delete(0, END)
+
+        mydb.commit()
 
 
-    mycursor.execute(sql, [(name),(type),(cell),(id)])
-    messagebox.showinfo("ADMIN", "Succesfully Updated")
-    Username.delete(0, END)
-    ID_no.delete(0, END)
-    Description.delete(0, END)
-    Cell_no.delete(0, END)
-    diplay_names.delete(0, END)
-
-    mydb.commit()
 
 
 def get_all():
